@@ -53,9 +53,9 @@ except UnicodeDecodeError as e:
     print(f"Error decoding file due to encoding issue: {e}")
     exit(1)
 
-# Analyze each post
+# Analyze each post assuming data is a list of posts
 results = []
-for post in data['posts']:
+for post in data:  # Loop over the list directly
     text = post['content']  # Using the 'content' field from your JSON structure
     classification = classify_tweet_multi_output(text)
     
